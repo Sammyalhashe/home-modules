@@ -24,6 +24,12 @@
       inputs.vicinae.follows = "vicinae";
       inputs.systems.follows = "vicinae/systems";
     };
+
+    vicinae-quick-notes = {
+      url = "github:Sammyalhashe/vicinae-quick-notes";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.vicinae.follows = "vicinae";
+    };
   };
 
   outputs =
@@ -54,7 +60,7 @@
           keyed // { default.imports = builtins.attrValues keyed; };
 
         perSystem =
-          { pkgs, ... }:
+          { pkgs, system, ... }:
           let
             home = inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
@@ -74,9 +80,11 @@
             formatter = pkgs.nixfmt-tree;
 
             # Eval-only: forces the whole home configuration without building it.
-            checks.home-eval = pkgs.writeText "home-eval" (
-              builtins.unsafeDiscardStringContext home.activationPackage.drvPath
-            );
+            checks = {
+              home-eval = pkgs.writeText "home-eval" (
+                builtins.unsafeDiscardStringContext home.activationPackage.drvPath
+              );
+            };
           };
       }
     );

@@ -132,7 +132,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "vicinae": "vicinae",
-        "vicinae-extensions": "vicinae-extensions"
+        "vicinae-extensions": "vicinae-extensions",
+        "vicinae-quick-notes": "vicinae-quick-notes"
       }
     },
     "soulver-cpp": {
@@ -218,6 +219,29 @@
       "original": {
         "owner": "vicinaehq",
         "repo": "extensions",
+        "type": "github"
+      }
+    },
+    "vicinae-quick-notes": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "vicinae": [
+          "vicinae"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792005036,
+        "narHash": "sha256-I7b9/P3pfaj9v4zafTAACTez8clP3kmeMVl3s76+opk=",
+        "owner": "Sammyalhashe",
+        "repo": "vicinae-quick-notes",
+        "rev": "c07ab05ff9e4cdb17f1cc450ec6228237893b1bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Sammyalhashe",
+        "repo": "vicinae-quick-notes",
         "type": "github"
       }
     }
